@@ -1,0 +1,335 @@
+.content {
+  flex: 1 0 auto;
+}
+
+
+
+
+// MEDIA
+.media {
+  display: flex;
+  margin-bottom: 320px;
+  position: relative;
+
+  
+  @include laptop  {
+    margin-bottom: 240px;
+  }
+  
+  @include tablets {
+    flex-direction: column;
+  }
+
+  &__package {
+    position: absolute;
+    bottom: -160px;
+    left: -200px;
+  }
+
+  &__desc {
+    max-width: 576px;
+    margin-right: auto;
+
+    
+    @include laptop  {
+      max-width: 404px;
+      margin-right: 37px;
+    }
+    
+    @include tablets {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__head {
+    font-size: 30px;
+    font-family: "Lato_Regular";
+
+    @include laptop  {
+      font-size: 21px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-family: "Lato_Light";
+
+    & p {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+
+.video {
+  flex: auto 0 0;
+  width: 426px;
+  max-height: 237px;
+  background-color: black;
+
+  @include tablets {
+   width: 100%;   
+  }
+
+  &__play {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__active {
+    position: absolute;
+    // top: 50px;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  left: 100%;
+  bottom: 100%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+
+
+// FEEDBACK
+.feedback {
+  position: relative;
+  background: #153a54;
+  padding: 60px 40px 40px ;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 157px;
+
+  .thanks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #153a54;
+    color: #fff;
+    display: none;
+    transition: opacity .5s linear;
+
+    &__block {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 530px;
+    }
+
+    &__title {
+      font-size: 47px;
+      font-family: "Lato_Black";
+    }
+
+    &__desc {
+      font-size: 25px;
+    }
+  }
+
+  &__canopy {
+    position: absolute;
+    top: -105px;
+    left: -78px;
+
+    @include laptop {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__cloud {
+    position: absolute;
+    bottom: -62px;
+    left: -63px;
+  }
+
+  &__package {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    margin-left: 160px;
+    left: 100%;
+  }
+
+  &__title {
+    font-size: 30px;
+    color: #fff;
+    font-family: "Lato_Bold";
+
+    @include laptop  {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    color: #fff;
+    font-family: "Lato_Light";
+    margin-bottom: 30px;
+
+    @include laptop  {
+      font-size: 18px;
+    }
+  }
+
+  &__row {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablets {
+      flex-flow: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__inp {
+    font-size: 17px;
+    padding: 7px;
+    outline: none;
+    flex: 1 0 auto;
+    margin-right: 35px;
+    transition: all .4s linear;
+
+    @include tablets {
+      width: 34%;
+
+      &:first-child {
+        margin-right: 25px;
+      }
+      margin-right: 0;
+    }
+
+
+    &:last-child {
+      margin-right: 0;
+
+      @include tablets {
+        margin-top: 36px;
+      }
+    }
+  }
+
+  &__send {
+    text-align: right;
+  }
+
+  &__btn {
+    outline: none;
+    border: none;
+    background: #f26253;
+    font-family: "Lato_Bold";
+    font-size: 18px;
+    color: #fefefe;
+    padding: 13px 40px;
+    border-radius: 10px 0;
+    transition: all .4s linear;
+    cursor: pointer;
+
+    &:hover {
+      background: #db5f52;
+    }
+  }
+}
+
+
+
+
+// BENIFITS
+.benefits {
+  display: flex;
+  margin-bottom: 90px;
+
+  @include tablets {
+    flex-direction: column;
+  }
+
+  &__first, &__second {
+    flex: 0 0 auto;
+  }
+
+  &__first {
+    margin-right: auto;
+
+    @include laptop  {
+      margin-right: 0;
+    }
+  }
+
+  &__seller, &__buyer {
+    font-family: "Lato_Black";
+    font-size: 27px;
+    color: #fff;
+    width: 500px;
+    // max-width: 500px;
+    position: relative;
+
+    @include laptop  {
+      width: 100%;
+    }
+    
+  }
+
+  &__seller {
+    background: #52a0b2;
+    border-radius: 0 0 0 25px;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 29px;
+  }
+
+  &__buyer {
+    background: #f26253;
+    margin-bottom: 10px;
+    border-radius: 0 0 25px 0;
+    padding: 10px 0 10px 29px;
+  }
+}
+
+.hand1, .hand2 {
+  position: absolute;
+
+  @include laptop  {
+    display: none;
+  }
+}
+
+.hand1 {
+  left: 100%;
+  top: 0;
+}
+
+.hand2 {
+  right: 100%;
+  top: 0;
+}
+
+.seller__list li, .buyer__list li {
+  margin-left: 54px;
+  margin-bottom: 15px;
+  list-style-image: url(../images/content/list.png);
+  padding-left: 10px;
+}
+
+
+// TRADE
+.trade {
+  max-width: 950px;
+  text-align: center;
+  font-size: 35px;
+  color: #52a0b2;
+  margin: 0 auto;
+  font-weight: 300;
+  font-family: "Lato_Black";
+  margin-bottom: 120px;
+}
